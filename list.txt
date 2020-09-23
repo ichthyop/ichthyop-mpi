@@ -1,0 +1,9 @@
+# Example of the list to be provided to IchthyopMPI.
+# Lines starting with # or empty lines (careful with blank characters) are ignored.
+# Every line will be run as a system command.
+
+java -jar ichthyop.jar /home/pverley/ichthyop/dev/nb/iv3/cfg/2013_11_06_pverley_config_roms3d.xml.1 > out.1
+java -jar ichthyop.jar /home/pverley/ichthyop/dev/nb/iv3/cfg/2013_11_06_pverley_config_roms3d.xml.2 > out.2
+java -jar ichthyop.jar /home/pverley/ichthyop/dev/nb/iv3/cfg/2013_11_06_pverley_config_roms3d.xml.3 > out.3
+java -jar ichthyop.jar /home/pverley/ichthyop/dev/nb/iv3/cfg/2013_11_06_pverley_config_roms3d.xml.4 > out.4
+
