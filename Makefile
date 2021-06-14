@@ -13,6 +13,7 @@ all:
 	$(CC) $(CFLAGS) main.cpp $(LIBMPI) -o ichthyopmpi
 
 clean:
-	rm ichthyopmpi
+	rm -f ichthyopmpi
+
 
 	
