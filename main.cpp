@@ -31,11 +31,8 @@ using namespace std;
 const bool DEBUG=false;
 
 /* Functions headers */
-void readFile(const char *filename, vector<string> &files);
-void checkFileExist(const char *filename);
-
-// MPI rank
-int rank;
+void readFile(const char *filename, vector<string> &files, int rank);
+void checkFileExist(const char *filename, int rank);
 
 /*
  * 
@@ -64,7 +61,7 @@ int main(int argc, char** argv)
         cout<<msg.str();
         }
     vector<string> files=vector<string>();
-    readFile(argv[1], files);
+    readFile(argv[1], files, rank);
 
     if (files.size()<size)
         {
@@ -102,10 +99,10 @@ int main(int argc, char** argv)
     return 0;
     }
 
-void readFile(const char *filename, vector<string> &files)
+void readFile(const char *filename, vector<string> &files, int rank)
     {
 
-    checkFileExist(filename);
+    checkFileExist(filename, rank);
     stringstream msg;
 
     ifstream file(filename, ios::in);
@@ -131,7 +128,7 @@ void readFile(const char *filename, vector<string> &files)
         }
     }
 
-void checkFileExist(const char *filename)
+void checkFileExist(const char *filename, int rank)
     {
     FILE* f;
     if (!(f=fopen(filename, "r")))
